@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --unit-1: 4px;
+  --elevation-1: 1;
+  --min-height-carousel: 100%;
+  --color-brand-1: black;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.icon-button {
+  display: flex;
+  margin: 0 10px;
+  padding: 0 5px;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    margin: 0 5px;
+  }
+}
+
+

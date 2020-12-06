@@ -1,0 +1,26 @@
+:host {
+  height: 100%;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    .mat-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      cursor: pointer;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    .content {
+      flex: 1;
+    }
+  }
+}

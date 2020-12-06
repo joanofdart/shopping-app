@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'shopping-app';
+  title = 'Shopping App';
+  slides: string[] = [
+    'assets/starships/millennium-falcon.jpg',
+    'assets/starships/x-wing.jpg',
+    'assets/starships/y-wing.jpeg',
+  ];
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet?.activatedRouteData?.animation;
+  }
 }

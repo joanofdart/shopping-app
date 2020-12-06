@@ -1,0 +1,79 @@
+<section class="dynamic-list">
+  <table mat-table [dataSource]="availableProducts" class="mat-elevation-z8" *ngIf="availableProducts">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Product id </th>
+      <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+    </ng-container>
+
+    <!-- storeName Column -->
+    <ng-container matColumnDef="storeName">
+      <th mat-header-cell *matHeaderCellDef> Store Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.storeName }} </td>
+    </ng-container>
+
+    <!-- productName Column -->
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef> Product Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.productName }} </td>
+    </ng-container>
+
+    <!-- actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" class="">
+        <button mat-button (click)="addRemoveProductFromSources(element, selectedProducts, availableProducts)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <!-- ADDED PRODUCTS -->
+
+  <table mat-table [dataSource]="selectedProducts" class="mat-elevation-z8" *ngIf="selectedProducts">
+
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Product id </th>
+      <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+    </ng-container>
+
+    <!-- storeName Column -->
+    <ng-container matColumnDef="storeName">
+      <th mat-header-cell *matHeaderCellDef> Store Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.storeName }} </td>
+    </ng-container>
+
+    <!-- productName Column -->
+    <ng-container matColumnDef="productName">
+      <th mat-header-cell *matHeaderCellDef> Product Name </th>
+      <td mat-cell *matCellDef="let element"> {{ element.productName }} </td>
+    </ng-container>
+
+    <!-- quantity Column -->
+    <ng-container matColumnDef="quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{ element.quantity }} </td>
+    </ng-container>
+
+    <!-- remove Product -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element" class="">
+        <button mat-button (click)="addRemoveProductFromSources(element, availableProducts, selectedProducts)">
+          <mat-icon>remove_circle</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</section>
+
+
